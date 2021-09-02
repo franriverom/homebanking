@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/manager.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>JaValues</title>
+</head>
+<body id="app">
+    <header id="wrap-header">
+        <div id="header">
+            <img id="logo" src="./images/homebanking.png" alt="logo-home">
+            <h1><a id="h1-title" href="index.html">JaValues HomeBanking.</a></h1>
+        </div>
+    </header>
+    <main>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img id="carousel1" src="./images/carousel1.jpg" class="d-block w-100" alt="savings">
+                </div>
+                <div class="carousel-item">
+                    <img id="carousel2" src="./images/carousel2.jpg" class="d-block w-100" alt="girl-with-card">
+                </div>
+                <div class="carousel-item">
+                    <img id="carousel3" src="./images/carousel3.jpg" class="d-block w-100" alt="couple-with-bills">
+                </div>
+            </div>
+        </div>
+        <div id="login">
+            <form action="GET" autocomplete="off">
+                <h3 id="loginTitle">Account Login</h3>
+                <label for="email"><i class="fas fa-user"></i></label>
+                <input v-model="email" type="email" placeholder="Email" name="email" id="email" required>
+                <label for="password"><i class="fas fa-key"></i></label>
+                <input v-model="password" type="password" placeholder="Password" name="password" id="password" required>
+                <p v-if="error" id="error">Email or password incorrect!</p>
+                <input type="button" class="btn btn-success" value="Sign In" id="signIn" @click="login">
+                <button type="button" class="btn btn-secondary" id="newAcc" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Create a New Account!
+                </button>
+            </form>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="GET" id="registration" autocomplete="off">
+                            <label for="firstName">First Name:
+                                <input type="text" v-model="firstName" name="firstName" id="firstN" placeholder="John" required="">
+                            </label>
+                            <label for="lastName">Last Name:
+                                <input type="text" v-model="lastName" name="lastName" id="lastN" placeholder="Smith" required="">
+                            </label>
+                            <label for="email">Email:
+                                <input type="email" v-model="email" name="email" id="email2" placeholder="Example@example.com" required="">
+                            </label>
+                            <label for="password">Password:
+                                <input type="password" v-model="password" name="password" id="password2" placeholder="Create a Password" required="">
+                            </label>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="close" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="save" class="btn btn-success" @click="newAcc">Save &amp; Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Francisco Rivero 2021 | All Rights Reserved</p>
+    </footer>
+    <!--a href='https://www.freepik.es/fotos/mujer'>Foto de Mujer creado por diana.grytsku - www.freepik.es</a-->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./JS/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

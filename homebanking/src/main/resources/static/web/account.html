@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Account</title>
+</head>
+<body id="app">
+    <header id="wrap-header">
+        <div id="header">
+            <img id="logo" src="./images/homebanking.png" alt="logo-home">
+            <h1><a id="h1-title" href="accounts.html">JaValues HomeBanking.</a></h1>
+        </div>
+        <div id="nav-list">
+            <nav>
+                <a id="home-btn" class="btn btn-primary" href="accounts.html">Home</a>
+                <button class="btn btn-danger" id="logOut" @click="logout">Log Out</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="info-account">
+            <div id="nav-account">
+                <nav id="nav-side" class="nav flex-column">
+                    <a class="nav-link active" aria-current="page" href="account.html">Accounts</a>
+                    <a class="nav-link"  href="transfers.html">Transfer</a>
+                    <a class="nav-link" href="cards.html">Cards</a>
+                    <a class="nav-link"  href="loan-application.html">Loans</a>
+                </nav>
+            </div>
+            <div v-if="esVisible" id="theAccount">
+                <h2 id="h2-acc">Current Transactions</h2>
+                <p id="status">Remember that your debits appear on 🟥red and your credits appear on 🟩green:</p>
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            Account number: {{number}}
+                        </div>
+                        <div class="card-body">
+                            <h5 v-if="first.length <= 0" class="card-title">You have no transactions to show yet</h5>
+                            <ul v-for="item in first" class="list-group">
+                                <li v-if="mensaje">There are no trasactions to show yet</li>
+                                <li :id="[item.type == 'DEBIT' ? 'red' : 'green']" class="list-group-item">Type: <span class="span1">{{item.type}}</span></li>
+                                <li class="list-group-item">Amount: <span class="span1">${{item.amount}}</span></li>
+                                <li class="list-group-item">Description: <span class="span1">{{item.description}}</span></li>
+                                <li class="list-group-item">Date: <span class="span1">{{formatDate(item.date)}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Francisco Rivero 2021 | All Rights Reserved</p>
+    </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./JS/account.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mate SC', serif;
+}
+#wrap-header{
+    display: flex;
+    background: rgba(179,179,179,1);
+    background: -moz-linear-gradient(top, rgba(179,179,179,1) 0%, rgba(252,249,252,1) 50%, rgba(240,228,240,1) 59%, rgba(168,168,168,1) 99%, rgba(168,168,168,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179,179,179,1)), color-stop(50%, rgba(252,249,252,1)), color-stop(59%, rgba(240,228,240,1)), color-stop(99%, rgba(168,168,168,1)), color-stop(100%, rgba(168,168,168,1)));
+    background: -webkit-linear-gradient(top, rgba(179,179,179,1) 0%, rgba(252,249,252,1) 50%, rgba(240,228,240,1) 59%, rgba(168,168,168,1) 99%, rgba(168,168,168,1) 100%);
+    background: -o-linear-gradient(top, rgba(179,179,179,1) 0%, rgba(252,249,252,1) 50%, rgba(240,228,240,1) 59%, rgba(168,168,168,1) 99%, rgba(168,168,168,1) 100%);
+    background: -ms-linear-gradient(top, rgba(179,179,179,1) 0%, rgba(252,249,252,1) 50%, rgba(240,228,240,1) 59%, rgba(168,168,168,1) 99%, rgba(168,168,168,1) 100%);
+    background: linear-gradient(to bottom, rgba(179,179,179,1) 0%, rgba(252,249,252,1) 50%, rgba(240,228,240,1) 59%, rgba(168,168,168,1) 99%, rgba(168,168,168,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3b3b3', endColorstr='#a8a8a8', GradientType=0 );
+    padding: 1vw 1vh;
+}
+#header{
+    display: flex;
+    align-items: center;
+}
+#logo{
+    margin-left: 3vw;
+    width: 200px;
+    height: 125px;
+}
+#h1-title{
+    width: 100%;
+    color: black!important;
+    text-align: center;
+    padding-left: 18vw;
+    padding-right: 10vw;
+    text-decoration: underline 2px black!important;
+    text-shadow: 2px 2px 2px #e89700;
+}
+/*AREA DEL NAV*/
+#nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 7vw;
+    padding: 0;
+}
+
+#nav-side a{
+  font-size: 1.7rem;
+  text-decoration: none!important;
+  margin: 1vw;
+  color: black!important;
+  font-weight: bold;
+  padding-right: 2vw;
+  border-radius: 7px;
+  background: rgba(255,175,75,1);
+background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 37%, rgba(255,146,10,1) 62%, rgba(255,175,75,1) 97%, rgba(255,175,75,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(37%, rgba(255,146,10,1)), color-stop(62%, rgba(255,146,10,1)), color-stop(97%, rgba(255,175,75,1)), color-stop(100%, rgba(255,175,75,1)));
+background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 37%, rgba(255,146,10,1) 62%, rgba(255,175,75,1) 97%, rgba(255,175,75,1) 100%);
+background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 37%, rgba(255,146,10,1) 62%, rgba(255,175,75,1) 97%, rgba(255,175,75,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 37%, rgba(255,146,10,1) 62%, rgba(255,175,75,1) 97%, rgba(255,175,75,1) 100%);
+background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 37%, rgba(255,146,10,1) 62%, rgba(255,175,75,1) 97%, rgba(255,175,75,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ffaf4b', GradientType=0 );
+}
+
+#nav-side a:hover{
+    background-color: #ecad37!important;
+}
+#nav-account{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 14vh;
+    background: rgba(168,166,168,1);
+background: -moz-linear-gradient(top, rgba(168,166,168,1) 0%, rgba(226,226,226,1) 5%, rgba(250,250,250,1) 10%, rgba(189,188,187,1) 13%, rgba(15,14,13,1) 21%, rgba(5,4,4,1) 90%, rgba(5,4,4,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(168,166,168,1)), color-stop(5%, rgba(226,226,226,1)), color-stop(10%, rgba(250,250,250,1)), color-stop(13%, rgba(189,188,187,1)), color-stop(21%, rgba(15,14,13,1)), color-stop(90%, rgba(5,4,4,1)), color-stop(100%, rgba(5,4,4,1)));
+background: -webkit-linear-gradient(top, rgba(168,166,168,1) 0%, rgba(226,226,226,1) 5%, rgba(250,250,250,1) 10%, rgba(189,188,187,1) 13%, rgba(15,14,13,1) 21%, rgba(5,4,4,1) 90%, rgba(5,4,4,1) 100%);
+background: -o-linear-gradient(top, rgba(168,166,168,1) 0%, rgba(226,226,226,1) 5%, rgba(250,250,250,1) 10%, rgba(189,188,187,1) 13%, rgba(15,14,13,1) 21%, rgba(5,4,4,1) 90%, rgba(5,4,4,1) 100%);
+background: -ms-linear-gradient(top, rgba(168,166,168,1) 0%, rgba(226,226,226,1) 5%, rgba(250,250,250,1) 10%, rgba(189,188,187,1) 13%, rgba(15,14,13,1) 21%, rgba(5,4,4,1) 90%, rgba(5,4,4,1) 100%);
+background: linear-gradient(to bottom, rgba(168,166,168,1) 0%, rgba(226,226,226,1) 5%, rgba(250,250,250,1) 10%, rgba(189,188,187,1) 13%, rgba(15,14,13,1) 21%, rgba(5,4,4,1) 90%, rgba(5,4,4,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8a6a8', endColorstr='#050404', GradientType=0 );
+    height: 70vh;
+}
+/*FIN DEL NAV*/
+#red{
+  background-color: red;
+}
+#green{
+  background-color: green;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 70vh;
+    background: url(http://api.thumbr.it/whitenoise-361x370.png?background=cdd0d1ff&noise=626262&density=10&opacity=69);
+}
+#h2-acc{
+    font-size: 45px!important;
+}
+#theAccount, #theLoan{
+    margin-left: 10vw;
+    margin-top: 5vh;
+    margin-right: 2vw;
+    font-size: 1.5rem;
+    overflow: auto;
+}
+#theAccount2{
+    margin-left: 7vw;
+    margin-top: 5vh;
+    margin-right: 2vw;
+    font-size: 1.5rem;
+    overflow: auto;
+    width: 70vw;
+}
+#theLoan{
+    max-width: 100vw!important;
+}
+
+/*INFO DE LAS CARDS*/
+
+.card{
+    width: 100%;
+}
+#deleteCard{
+  float: right;
+}
+#infoDeleteC{
+  text-align: justify;
+  font-family: calibri;
+  font-size: medium;
+}
+#cvv{
+  font-family: calibri!important;
+  font-size: 1.2rem;
+}
+/*FIN DE LA INFO*/
+
+/*LOAN Y TRANSFERS INFO*/
+#status, #loanInfo, h6, option{
+    font-family: calibri;
+}
+#info-account{
+    display: flex;
+    height: 63vh;
+    background-color: white!important;
+    height: 70vh;
+    padding-bottom: 5vh;
+}
+#formToTransfer, #newDest, #amount, #description{
+  font-family: calibri;
+  font-size: 1.2rem;
+}
+#formToTransfer{
+  width: 70%;
+}
+#p-amount{
+  font-size: x-small;
+  font-family: calibri;
+}
+
+#advert{
+  font-family: calibri;
+}
+#button-canvas{
+  float: right;
+}
+#newDest, #amount, #description{
+  width: 19vw;
+}
+#toAcc, #dest{
+  width: 100%;
+}
+.span1{
+    font-family: calibri;
+}
+/*LOAN SECTION*/
+#status{
+  text-align: justify;
+}
+#askTheCards, #formToTransfer, #formToTransfer div{
+  width: 100%;
+}
+#loan, #toAccountNumber, #amount, #payments{
+  width: 100%;
+}
+.infoSelect{
+  font-family: calibri!important;
+}
+
+
+/*FOOTER*/
+footer p{
+    text-align: center;
+    justify-content: center;
+    color: white!important;
+    font-size: 1.5rem;
+    background-color: black;
+    height: 100%;
+}
+footer{
+    margin: 0;
+    background-color: black;
+    height: 7vh;
+}
+
+/*SECCION DE LAS TARJETA*/
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
+
+
+:root {
+  --purple: #efb810;
+  --purple2: #efb810;
+  --white: #f6d3fd;
+  --height: 222px;
+  --width: 350px;
+  --font: "Overpass Mono", monospaced!important;
+  --masterFont: "Raleway", sans-serif!important;
+}
+
+
+#cards {
+  --heightCalc: - calc((var(--height) / 2) - 10px);
+  --widthCalc: calc(var(--width) / 2);
+  height: var(--height);
+  width: var(--width)!important;
+  min-width: var(--width);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 2vw auto;
+  position: relative;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
+  transform: translateY(calc(50% - 10px));
+  padding-bottom: 2vh;
+}
+
+.silver{
+  background-color: #e3e4e5;
+}
+
+.gold{
+  background-color: #efb810;
+}
+
+.titanium{
+  background-color: #878681;
+}
+
+
+.card__figure {
+  position: relative;
+  height: 40px;
+  margin: 0;
+}
+
+.card__type{
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+
+.card__figure::after {
+  content: "JAVALUES";
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: var(--white);
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: calc(-100% - 1px);
+}
+
+.card__figure--logo {
+  --widthLogo: 130px;
+  width: var(--widthLogo);
+  position: absolute;
+  right: 52%;
+  transform: translate(calc(var(--widthLogo) / 2), 20px);
+}
+
+.card__reader {
+  width: 50px;
+  height: 40px;
+  background: radial-gradient(#d9a56c, #b18457);
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translate(33px, -40px);
+  overflow: hidden;
+}
+
+#cvvNum{
+  color: black;
+  margin-left: 1vw;
+  font-family: calibri;
+  font-size: small;
+}
+
+.card__reader--risk {
+  width: 50px;
+  height: 40px;
+  border-radius: 13px;
+  background: transparent;
+  border: 1px solid #666;
+  position: absolute;
+  z-index: 0;
+}
+
+.card__reader--risk-one {
+  transform: translate(37px, 15px);
+}
+
+.card__reader--risk-two {
+  transform: translate(15px, 30px);
+}
+
+.card__reader--risk-three {
+  transform: translate(-37px, -15px);
+}
+
+.card__reader--risk-four {
+  transform: translate(-15px, -30px);
+}
+
+.card__number {
+  font-family: var(--font);
+  font-size: 1rem!important;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 2.5px!important;
+  text-align: center;
+  margin-left: -20px;
+  margin-top: 80px;
+  z-index: 1;
+  position: relative;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.card__number::before,
+.card__number::after {
+  font-family: Arial!important;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.8em;
+  position: absolute;
+  letter-spacing: 0px;
+}
+
+
+.card__number::after {
+  content: "Valid thru:";
+  width: 80px;
+  transform: translate(-160px, 26px);
+}
+
+.card__dates {
+  position: absolute;
+  width: 40%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+  font-family: var(--font)!important;
+  bottom: 22%;
+  transform: translate(40px, 0px);
+}
+
+.card__dates span {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.card__name {
+  font-family: var(--font)!important;
+  font-size: .9em;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 2.5px;
+  transform: translate(35px, 25px);
+  position: relative;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.card__flag {
+  right: 30px;
+  top: 45%;
+  border-radius: 25px;
+  transform: translate(0, -28px);
+  position: absolute;
+  height: 110px;
+  width: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.card__flag--globe {
+  --margin: 5px;
+  width: calc(100% - (var(--margin) * 2));
+  background-color: #b7b2b8;
+  height: 50%;
+  border-radius: 20px;
+  margin: var(--margin);
+  background: repeating-linear-gradient(
+    0deg,
+    #dbd1dc,
+    #dbd1dc 5px,
+    #b2aab5 7px,
+    #b2aab5 5px
+  );
+}
+
+.card__flag--globe::after,
+.card__flag--globe::before {
+  content: "\f0ac";
+  font-family: FontAwesome!important;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 3em;
+  top: 6px;
+  left: 2px;
+  position: absolute;
+}
+
+.card__flag--globe::after {
+  transform: translateX(10px);
+}
+
+.card__flag--globe::before {
+  transform: translateX(25px);
+}
+
+.card__flag--red {
+  position: absolute;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ce0e1d;
+}
+
+.card__flag--yellow {
+  position: absolute;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e39833;
+}
+
+.card__flag--yellow::after {
+  content: "MasterCard";
+  position: absolute;
+  font-size: 0.7em;
+  top: 50%;
+  transform: translate(-40px, -7px);
+  font-family: var(--masterFont)!important;
+  font-style: italic!important;
+  font-weight: 800;
+  color: var(--white);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+.assign {
+  text-align: center;
+  margin-top: 113px;
+  font-family: var(--masterFont)!important;
+  color: #fff;
+  font-size: 0.8em;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.assign a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.assign a::hover {
+  color: var(--purple);
+}
+
+#title{
+    margin-top: 20vh;
+    background-color: #e89700;
+}
+#debito{
+    background-color: #e89700;
+}
+/*MEDIA QUERIES*/
+
+@media (max-width: 750px){
+  #logo, #h1-title{
+    display: none;
+  }
+  #logOut, #home-btn{
+    width: 25vw;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+  }
+  #info-account{
+    display: flex;
+    flex-direction: column;
+    height: 63vh;
+    background-color: white!important;
+    height: 70vh;
+    padding-bottom: 5vh;
+}
+  #nav-side{
+    display: flex;
+    flex-direction: row!important;
+  }
+}

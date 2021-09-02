@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Account</title>
+</head>
+<body id="app">
+    <header id="wrap-header">
+        <div id="header">
+            <img id="logo" src="./images/homebanking.png" alt="logo-home">
+            <h1><a id="h1-title" href="accounts.html">JaValues HomeBanking.</a></h1>
+        </div>
+        <div id="nav-list">
+            <nav>
+                <a id="home-btn" class="btn btn-primary" href="accounts.html">Home</a>
+                <button class="btn btn-danger" id="logOut" @click="logout">Log Out</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="info-account">
+            <div id="nav-account">
+                <nav id="nav-side" class="nav flex-column">
+                    <a class="nav-link active" aria-current="page" href="account.html">Accounts</a>
+                    <a class="nav-link"  href="transfers.html">Transfer</a>
+                    <a class="nav-link" href="cards.html">Cards</a>
+                    <a class="nav-link" href="loan-application.html">Loans</a>
+                </nav>
+            </div>
+            <div id="theAccount2">
+                <button class="btn btn-success" id="button-canvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Apply for New Loan</button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Loan Application</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p id="status">Remember that all loans are pre-approved, so you will see the money in your account instantly</p>
+                    <div id="askTheCards">
+                        <form action="GET" id="formToTransfer">
+                            <div>
+                                <label for="loan">Type:</label>
+                                <select v-model="loan" name="loan" id="loan" required>
+                                    <option value="" class="infoSelect" selected disabled>--Please choose a type of Loan--</option>
+                                    <option v-for="item in loanData" :value="item.name">{{item.name}}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="toAccountNumber">To:</label>
+                                <select v-model="toAccountNumber"  name="toAccountNumber" id="toAccountNumber" required>
+                                    <option  value="" class="infoSelect" selected disabled>--Choose the Account destination--</option>
+                                    <option v-for="number in accounts" :value="number.number">{{number.number}}</option>
+                                </select>
+                                <h6>Current balance in this Account: ${{currentBalance()}}</h6>
+                            </div>
+                            <div>
+                            <label for="amount" class="col-md-6">Loan Amount:</label>
+                                <input type="number" v-model="amount"  min="1000" :max="maxAmount()" name="amount" id="amount" placeholder="Amount To apply for">
+                                <h6>Max available to apply for: ${{maxAmount()}}</h6>
+                            </div>
+                            <div>
+                                <label for="payments">Payments: </label>
+                                <select name="payments" v-model="payments" id="payments" required>
+                                    <option value="" class="infoSelect" selected disabled>--Select the number of payments--</option>
+                                    <option v-for="payments in paymentsByName()" :value="payments">{{payments}}</option>
+                                </select>
+                                <h6>Adding the 20% of interest that we have for our loans, you'll have to pay in each payment: ${{amountToPay()}} </h6>
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-success" id="transfer" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Apply to Loan
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">IMPORTANT!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="loanInfo">Are you sure that you want to do this transaction? this process will be irreversible</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="close" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" id="save" class="btn btn-success" @click="applyLoan">Yes, apply to this Loan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="theLoan">
+                <h2 id="h2-acc">Current Loans</h2>
+                <p v-if="loans.length <= 0">You have no loans requested yet {{names}}</p>
+                <p id="status">Loans that you've recently requested for {{names}}:</p>
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            Account number: {{number}}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <ul v-for="loan in loans" class="list-group">
+                                <li class="list-group-item">Type: <span class="span1">{{loan.name}}</span></li>
+                                <li class="list-group-item">Amount: <span class="span1">${{loan.amount}}</span></li>
+                                <li class="list-group-item">Payments: <span class="span1">{{loan.payments}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Francisco Rivero 2021 | All Rights Reserved</p>
+    </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./JS/loan-application.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
